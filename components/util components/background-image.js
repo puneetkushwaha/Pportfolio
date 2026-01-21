@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function BackgroundImage(props) {
     const bg_images = {
-        "wall-1": "/images/wallpapers/wall-1.jpg",
-        "wall-2": "/images/wallpapers/wall-2.jpg",
+        "wall-1": "/images/wallpapers/wall1.jpg",
+        "wall-2": "/images/wallpapers/wall2.jpg",
     };
 
     const bg_image_path = bg_images[props.img] || bg_images["wall-1"];
