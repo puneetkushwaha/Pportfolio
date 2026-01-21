@@ -3,8 +3,8 @@ import $ from 'jquery';
 
 export function Settings(props) {
     const wallpapers = {
-        "swordman": "/images/wallpapers/swordman-ink-washed-blade-moewalls-com.mp4",
-        "spiderman": "/images/wallpapers/symbiote-spider-man-shattered-dimensions-moewalls-com.mp4",
+        "wall-1": "/images/wallpapers/wall-1.mp4",
+        "wall-2": "/images/wallpapers/wall-2.mp4",
     };
 
     let changeBackgroundImage = (e) => {
@@ -14,12 +14,12 @@ export function Settings(props) {
     return (
         <div className={"w-full flex-col flex-grow z-20 max-h-full overflow-y-auto windowMainScreen select-none bg-ub-cool-grey"}>
             <div className=" md:w-2/5 w-2/3 h-1/3 m-auto my-4 overflow-hidden relative">
-                {(wallpapers[props.currBgImgName] && wallpapers[props.currBgImgName].endsWith(".mp4")) || (wallpapers[props.currBgImgName] === undefined && wallpapers["swordman"].endsWith(".mp4")) ? (
-                    <video key={wallpapers[props.currBgImgName] || wallpapers["swordman"]} autoPlay muted loop playsInline className="w-full h-full object-cover">
-                        <source src={wallpapers[props.currBgImgName] || wallpapers["swordman"]} type="video/mp4" />
+                {(wallpapers[props.currBgImgName] && wallpapers[props.currBgImgName].endsWith(".mp4")) || (wallpapers[props.currBgImgName] === undefined && wallpapers["wall-1"].endsWith(".mp4")) ? (
+                    <video key={wallpapers[props.currBgImgName] || wallpapers["wall-1"]} autoPlay muted loop playsInline className="w-full h-full object-cover">
+                        <source src={wallpapers[props.currBgImgName] || wallpapers["wall-1"]} type="video/mp4" />
                     </video>
                 ) : (
-                    <div className="w-full h-full" style={{ backgroundImage: `url(${wallpapers[props.currBgImgName] || wallpapers["swordman"]})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center center" }}></div>
+                    <div className="w-full h-full" style={{ backgroundImage: `url(${wallpapers[props.currBgImgName] || wallpapers["wall-1"]})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center center" }}></div>
                 )}
             </div>
             <div className="flex flex-wrap justify-center items-center border-t border-gray-900">

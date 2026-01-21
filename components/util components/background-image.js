@@ -2,11 +2,11 @@ import React from 'react'
 
 export default function BackgroundImage(props) {
     const bg_images = {
-        "swordman": "/images/wallpapers/swordman-ink-washed-blade-moewalls-com.mp4",
-        "spiderman": "/images/wallpapers/symbiote-spider-man-shattered-dimensions-moewalls-com.mp4",
+        "wall-1": "/images/wallpapers/wall-1.mp4",
+        "wall-2": "/images/wallpapers/wall-2.mp4",
     };
 
-    const bg_image_path = bg_images[props.img] || bg_images["swordman"];
+    const bg_image_path = bg_images[props.img] || bg_images["wall-1"];
     const isVideo = bg_image_path.endsWith(".mp4");
 
     if (isVideo) {

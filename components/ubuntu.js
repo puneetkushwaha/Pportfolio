@@ -10,7 +10,7 @@ export default class Ubuntu extends Component {
 		super();
 		this.state = {
 			screen_locked: false,
-			bg_image_name: 'swordman',
+			bg_image_name: 'wall-1',
 			booting_screen: true,
 			shutDownScreen: false
 		};
@@ -30,8 +30,8 @@ export default class Ubuntu extends Component {
 		// Get Previously selected Background Image
 		let bg_image_name = localStorage.getItem('bg-image');
 		if (bg_image_name !== null && bg_image_name !== undefined) {
-			if (bg_image_name === "dodge" || bg_image_name === "wall-2" || bg_image_name.startsWith("wall-")) {
-				bg_image_name = "swordman";
+			if (bg_image_name === "dodge" || bg_image_name === "swordman" || bg_image_name.startsWith("wall-") === false) {
+				bg_image_name = "wall-1";
 			}
 			this.setState({ bg_image_name });
 		}
