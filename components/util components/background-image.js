@@ -4,6 +4,9 @@ export default function BackgroundImage(props) {
     const bg_images = {
         "wall-1": "/images/wallpapers/wall-1.mp4",
         "wall-2": "/images/wallpapers/wall-2.mp4",
+        "wall-3": "/images/wallpapers/wall-3.jpg",
+        "wall-4": "/images/wallpapers/wall-4.jpg",
+        "wall-5": "/images/wallpapers/wall-5.jpg",
     };
 
     const bg_image_path = bg_images[props.img] || bg_images["wall-1"];

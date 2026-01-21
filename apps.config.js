@@ -11,6 +11,7 @@ import { displayJarvis } from './components/apps/jarvis';
 import { displayCertificates } from './components/apps/certificates';
 import { displayGallery } from './components/apps/gallery';
 
+
 const apps = [
     {
         id: "chrome",
@@ -109,7 +110,7 @@ const apps = [
         title: "LinkedIn",
         icon: '/images/logos/linkedin.svg',
         disabled: false,
-        favourite: true,
+        favourite: false,
         desktop_shortcut: true,
         isExternalApp: true,
         url: "https://www.linkedin.com/in/puneettkushwaha/"
@@ -119,7 +120,7 @@ const apps = [
         title: "Resume",
         icon: '/images/logos/resume.svg',
         disabled: false,
-        favourite: true,
+        favourite: false,
         desktop_shortcut: true,
         isExternalApp: true,
         url: "./files/Puneet-Kushwaha-Resume.pdf"
@@ -147,10 +148,10 @@ const apps = [
         title: "Gallery",
         icon: '/images/logos/gallery_icon.png',
         disabled: false,
-        favourite: true,
+        favourite: false,
         desktop_shortcut: true,
         screen: displayGallery,
-    },
+    }
 ]
 
 export default apps;

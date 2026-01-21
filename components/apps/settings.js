@@ -5,6 +5,9 @@ export function Settings(props) {
     const wallpapers = {
         "wall-1": "/images/wallpapers/wall-1.mp4",
         "wall-2": "/images/wallpapers/wall-2.mp4",
+        "wall-3": "/images/wallpapers/wall-3.jpg",
+        "wall-4": "/images/wallpapers/wall-4.jpg",
+        "wall-5": "/images/wallpapers/wall-5.jpg",
     };
 
     let changeBackgroundImage = (e) => {
@@ -30,7 +33,7 @@ export function Settings(props) {
                         return (
                             <div key={index} tabIndex="1" onFocus={changeBackgroundImage} data-path={name} className={((name === props.currBgImgName) ? " border-yellow-700 " : " border-transparent ") + " md:w-56 md:h-40 w-28 h-20 m-2 outline-none border-4 border-opacity-80 relative overflow-hidden"}>
                                 {isVideo ? (
-                                    <video key={currentPath} muted loop playsInline className="w-full h-full object-cover pointer-events-none">
+                                    <video key={currentPath} autoPlay muted loop playsInline className="w-full h-full object-cover pointer-events-none">
                                         <source src={currentPath} type="video/mp4" />
                                     </video>
                                 ) : (

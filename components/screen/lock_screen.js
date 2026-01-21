@@ -4,8 +4,11 @@ import Clock from '../util components/clock';
 export default function LockScreen(props) {
 
     const wallpapers = {
-        "swordman": "./images/wallpapers/swordman-ink-washed-blade-moewalls-com.mp4",
-        "spiderman": "./images/wallpapers/symbiote-spider-man-shattered-dimensions-moewalls-com.mp4",
+        "wall-1": "/images/wallpapers/wall-1.mp4",
+        "wall-2": "/images/wallpapers/wall-2.mp4",
+        "wall-3": "/images/wallpapers/wall-3.jpg",
+        "wall-4": "/images/wallpapers/wall-4.jpg",
+        "wall-5": "/images/wallpapers/wall-5.jpg",
     };
 
     if (props.isLocked) {
@@ -13,7 +16,7 @@ export default function LockScreen(props) {
         window.addEventListener('keypress', props.unLockScreen);
     };
 
-    const bg_image_path = wallpapers[props.bgImgName] || wallpapers["swordman"];
+    const bg_image_path = wallpapers[props.bgImgName] || wallpapers["wall-1"];
     const isVideo = bg_image_path.endsWith(".mp4");
 
     return (
