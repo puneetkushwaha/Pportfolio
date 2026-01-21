@@ -13,18 +13,19 @@ export default function LockScreen(props) {
         window.addEventListener('keypress', props.unLockScreen);
     };
 
-    const isVideo = wallpapers[props.bgImgName] && wallpapers[props.bgImgName].endsWith(".mp4");
+    const bg_image_path = wallpapers[props.bgImgName] || wallpapers["swordman"];
+    const isVideo = bg_image_path.endsWith(".mp4");
 
     return (
         <div id="ubuntu-lock-screen" style={{ zIndex: "100" }} className={(props.isLocked ? " visible translate-y-0 " : " invisible -translate-y-full ") + " absolute outline-none bg-black bg-opacity-90 transform duration-500 select-none top-0 right-0 overflow-hidden m-0 p-0 h-screen w-screen"}>
             {isVideo ? (
                 <div className="absolute top-0 left-0 w-full h-full transform z-20 blur-md">
                     <video autoPlay muted loop className="w-full h-full object-cover">
-                        <source src={wallpapers[props.bgImgName]} type="video/mp4" />
+                        <source src={bg_image_path} type="video/mp4" />
                     </video>
                 </div>
             ) : (
-                <div style={{ backgroundImage: `url(${wallpapers[props.bgImgName] || wallpapers["swordman"]})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPositionX: "center" }} className="absolute top-0 left-0 w-full h-full transform z-20 blur-md "></div>
+                <div style={{ backgroundImage: `url(${bg_image_path})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPositionX: "center" }} className="absolute top-0 left-0 w-full h-full transform z-20 blur-md "></div>
             )}
             <div className="w-full h-full z-50 overflow-hidden relative flex flex-col justify-center items-center text-white">
                 <div className=" text-7xl">

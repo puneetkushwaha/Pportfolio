@@ -14,9 +14,9 @@ export function Settings(props) {
     return (
         <div className={"w-full flex-col flex-grow z-20 max-h-full overflow-y-auto windowMainScreen select-none bg-ub-cool-grey"}>
             <div className=" md:w-2/5 w-2/3 h-1/3 m-auto my-4 overflow-hidden relative">
-                {wallpapers[props.currBgImgName] && wallpapers[props.currBgImgName].endsWith(".mp4") ? (
-                    <video key={wallpapers[props.currBgImgName]} autoPlay muted loop playsInline className="w-full h-full object-cover">
-                        <source src={wallpapers[props.currBgImgName]} type="video/mp4" />
+                {(wallpapers[props.currBgImgName] && wallpapers[props.currBgImgName].endsWith(".mp4")) || (wallpapers[props.currBgImgName] === undefined && wallpapers["swordman"].endsWith(".mp4")) ? (
+                    <video key={wallpapers[props.currBgImgName] || wallpapers["swordman"]} autoPlay muted loop playsInline className="w-full h-full object-cover">
+                        <source src={wallpapers[props.currBgImgName] || wallpapers["swordman"]} type="video/mp4" />
                     </video>
                 ) : (
                     <div className="w-full h-full" style={{ backgroundImage: `url(${wallpapers[props.currBgImgName] || wallpapers["swordman"]})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center center" }}></div>
