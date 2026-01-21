@@ -184,7 +184,7 @@ export class Window extends Component {
                     <WindowEditButtons minimize={this.minimizeWindow} maximize={this.maximizeWindow} isMaximised={this.state.maximized} close={this.closeWindow} id={this.id} />
                     {(this.props.id === "settings"
                         ? <Settings changeBackgroundImage={this.props.changeBackgroundImage} currBgImgName={this.props.bg_image_name} />
-                        : <WindowMainScreen screen={this.props.screen} title={this.props.title}
+                        : <WindowMainScreen id={this.props.id} screen={this.props.screen} title={this.props.title}
                             addFolder={this.props.id === "terminal" ? this.props.addFolder : null}
                             openApp={this.props.openApp} />)}
                 </div>
@@ -291,7 +291,7 @@ export class WindowMainScreen extends Component {
     }
     render() {
         return (
-            <div className={"w-full flex-grow z-20 max-h-full overflow-y-auto windowMainScreen" + (this.state.setDarkBg ? " bg-ub-drk-abrgn " : " bg-ub-cool-grey")}>
+            <div className={"w-full flex-grow z-20 max-h-full overflow-y-auto windowMainScreen" + (this.props.id === "jarvis" ? " bg-black" : (this.state.setDarkBg ? " bg-ub-drk-abrgn " : " bg-ub-cool-grey"))}>
                 {this.props.addFolder ? displayTerminal(this.props.addFolder, this.props.openApp) : this.props.screen()}
             </div>
         )

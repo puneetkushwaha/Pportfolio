@@ -73,17 +73,29 @@ export class Jarvis extends Component {
 
     render() {
         return (
-            <div className="h-full w-full flex flex-col bg-ub-drk-abrgn text-white font-ubuntu">
-                <div className="flex-1 overflow-y-auto p-4 space-y-4" id="jarvis-chat-box">
+            <div className="h-full w-full flex flex-col bg-black text-white font-ubuntu relative overflow-hidden">
+
+                {/* Background Logo Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+                    <div className="relative w-64 h-64 md:w-96 md:h-96 opacity-10">
+                        <img
+                            src="./images/logos/jarvis.svg"
+                            className="w-full h-full object-contain drop-shadow-[0_0_30px_rgba(233,84,32,0.5)]"
+                            alt="Jarvis Background"
+                        />
+                    </div>
+                </div>
+
+                <div className="flex-1 overflow-y-auto p-4 space-y-4 relative z-10" id="jarvis-chat-box">
                     {this.state.messages.map((msg, idx) => (
                         <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                            <div className={`max-w-xs md:max-w-md px-4 py-2 rounded-lg ${msg.role === 'user' ? 'bg-ub-orange text-white' : 'bg-gray-800 text-gray-200'}`}>
+                            <div className={`max-w-xs md:max-w-md px-4 py-2 rounded-lg backdrop-blur-sm ${msg.role === 'user' ? 'bg-ub-orange/90 text-white shadow-ub-orange/20' : 'bg-gray-800/80 text-gray-200 shadow-black/40'}`}>
                                 {msg.content}
                             </div>
                         </div>
                     ))}
                 </div>
-                <form onSubmit={this.sendMessage} className="p-4 bg-gray-900 flex space-x-2">
+                <form onSubmit={this.sendMessage} className="p-4 bg-black/80 backdrop-blur-md flex space-x-2 border-t border-gray-900 relative z-20">
                     <input
                         ref={this.inputRef}
                         type="text"
