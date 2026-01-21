@@ -115,33 +115,24 @@ const apps = [
         isExternalApp: true,
         url: "https://www.linkedin.com/in/puneettkushwaha/"
     },
+
     {
-        id: "resume",
-        title: "Resume",
-        icon: '/images/logos/resume.svg',
-        disabled: false,
+        id: "column-break",
+        title: "",
+        icon: "",
+        disabled: true,
         favourite: false,
         desktop_shortcut: true,
-        isExternalApp: true,
-        url: "./files/Puneet-Kushwaha-Resume.pdf"
+        screen: () => { },
     },
     {
         id: "certificates",
         title: "Certificates",
-        icon: '/images/logos/certificate_3d.png', // Corrected path
+        icon: '/images/logos/certificate_3d.png',
         disabled: false,
         favourite: false,
         desktop_shortcut: true,
         screen: displayCertificates,
-    },
-    {
-        id: "jarvis",
-        title: "Jarvis AI",
-        icon: '/images/logos/jarvis.svg', // New transparent SVG
-        disabled: false,
-        favourite: false,
-        desktop_shortcut: false,
-        screen: displayJarvis,
     },
     {
         id: "gallery",
@@ -151,6 +142,25 @@ const apps = [
         favourite: false,
         desktop_shortcut: true,
         screen: displayGallery,
+    },
+    {
+        id: "resume",
+        title: "Resume",
+        icon: '/images/logos/resume.svg',
+        disabled: false,
+        favourite: true, // Added to sidebar (activities)
+        desktop_shortcut: true,
+        isExternalApp: true,
+        url: "./files/Puneet-Kushwaha-Resume.pdf"
+    },
+    {
+        id: "jarvis",
+        title: "Jarvis AI",
+        icon: '/images/logos/jarvis.svg',
+        disabled: false,
+        favourite: false,
+        desktop_shortcut: false,
+        screen: displayJarvis,
     }
 ]
 

@@ -11,6 +11,9 @@ export class UbuntuApp extends Component {
     }
 
     render() {
+        if (this.props.id === "column-break") {
+            return <div className="w-0" style={{ flexBasis: '100%' }}></div>;
+        }
         return (
             <div
                 className="p-1 m-px z-10 bg-white bg-opacity-0 hover:bg-opacity-10 focus:bg-ub-orange focus:bg-opacity-50 focus:border-yellow-700 focus:border-opacity-100 border border-transparent outline-none rounded select-none w-24 h-24 flex flex-col justify-center items-center text-center text-[11px] font-normal text-white relative transition-all duration-100 group"
