@@ -4,22 +4,8 @@ import Clock from '../util components/clock';
 export default function LockScreen(props) {
 
     const wallpapers = {
-        "wall-1": "./images/wallpapers/wall-1.webp",
-        "wall-2": "./images/wallpapers/wall-2.webp",
-        "wall-3": "./images/wallpapers/wall-3.webp",
-        "wall-4": "./images/wallpapers/wall-4.webp",
-        "wall-5": "./images/wallpapers/wall-5.webp",
-        "wall-6": "./images/wallpapers/wall-6.webp",
-        "wall-7": "./images/wallpapers/wall-7.webp",
-        "wall-8": "./images/wallpapers/wall-8.webp",
-        "berserker": "./images/wallpapers/berserker-armor-dragon-slayer-moewalls-com.mp4",
-        "cat-bee": "./images/wallpapers/cat-and-bee-moewalls-com.mp4",
-        "dark-queen": "./images/wallpapers/dark-queen-knight-moewalls-com.mp4",
-        "dodge": "./images/wallpapers/dodge-challenger-black-panther-moewalls-com.mp4",
-        "guts": "./images/wallpapers/guts-crimson-fury-berserk-moewalls-com.mp4",
         "swordman": "./images/wallpapers/swordman-ink-washed-blade-moewalls-com.mp4",
         "spiderman": "./images/wallpapers/symbiote-spider-man-shattered-dimensions-moewalls-com.mp4",
-        "yin-yang": "./images/wallpapers/yin-yang-swordsman-moewalls-com.mp4",
     };
 
     if (props.isLocked) {
@@ -38,7 +24,7 @@ export default function LockScreen(props) {
                     </video>
                 </div>
             ) : (
-                <div style={{ backgroundImage: `url(${wallpapers[props.bgImgName]})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPositionX: "center" }} className="absolute top-0 left-0 w-full h-full transform z-20 blur-md "></div>
+                <div style={{ backgroundImage: `url(${wallpapers[props.bgImgName] || wallpapers["swordman"]})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPositionX: "center" }} className="absolute top-0 left-0 w-full h-full transform z-20 blur-md "></div>
             )}
             <div className="w-full h-full z-50 overflow-hidden relative flex flex-col justify-center items-center text-white">
                 <div className=" text-7xl">

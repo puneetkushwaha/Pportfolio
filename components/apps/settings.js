@@ -3,22 +3,8 @@ import $ from 'jquery';
 
 export function Settings(props) {
     const wallpapers = {
-        "wall-1": "/images/wallpapers/wall-1.webp",
-        "wall-2": "/images/wallpapers/wall-2.webp",
-        "wall-3": "/images/wallpapers/wall-3.webp",
-        "wall-4": "/images/wallpapers/wall-4.webp",
-        "wall-5": "/images/wallpapers/wall-5.webp",
-        "wall-6": "/images/wallpapers/wall-6.webp",
-        "wall-7": "/images/wallpapers/wall-7.webp",
-        "wall-8": "/images/wallpapers/wall-8.webp",
-        "berserker": "/images/wallpapers/berserker-armor-dragon-slayer-moewalls-com.mp4",
-        "cat-bee": "/images/wallpapers/cat-and-bee-moewalls-com.mp4",
-        "dark-queen": "/images/wallpapers/dark-queen-knight-moewalls-com.mp4",
-        "dodge": "/images/wallpapers/dodge-challenger-black-panther-moewalls-com.mp4",
-        "guts": "/images/wallpapers/guts-crimson-fury-berserk-moewalls-com.mp4",
         "swordman": "/images/wallpapers/swordman-ink-washed-blade-moewalls-com.mp4",
         "spiderman": "/images/wallpapers/symbiote-spider-man-shattered-dimensions-moewalls-com.mp4",
-        "yin-yang": "/images/wallpapers/yin-yang-swordsman-moewalls-com.mp4",
     };
 
     let changeBackgroundImage = (e) => {
@@ -33,7 +19,7 @@ export function Settings(props) {
                         <source src={wallpapers[props.currBgImgName]} type="video/mp4" />
                     </video>
                 ) : (
-                    <div className="w-full h-full" style={{ backgroundImage: `url(${wallpapers[props.currBgImgName] || wallpapers["wall-2"]})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center center" }}></div>
+                    <div className="w-full h-full" style={{ backgroundImage: `url(${wallpapers[props.currBgImgName] || wallpapers["swordman"]})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center center" }}></div>
                 )}
             </div>
             <div className="flex flex-wrap justify-center items-center border-t border-gray-900">
